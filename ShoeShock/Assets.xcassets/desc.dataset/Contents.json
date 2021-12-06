@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "desc.txt",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
