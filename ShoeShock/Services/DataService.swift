@@ -11,10 +11,10 @@ class DataService {
     static let instance = DataService()
     
     private let categories = [
-        Category (imageName: "Logo_nike1.png"),
-        Category (imageName: "Logo-adidas1.png"),
-        Category (imageName: "Puma-logo.png"),
-        Category (imageName: "New-Balance-Logo.png"),
+        Category (imageName: "Logo_nike1.png", categoryName: "NIKE"),
+        Category (imageName: "Logo-adidas1.png", categoryName: "ADIDAS"),
+        Category (imageName: "Puma-logo.png", categoryName: "PUMA"),
+        Category (imageName: "New-Balance-Logo.png", categoryName: "NEWBALANCE")
     ]
     
     private let nike = [
@@ -23,7 +23,7 @@ class DataService {
         Product(title: "NIKE AIR MAX 270", price: "$240", imageName: "air-max-270-blue.jpeg"),
         Product(title: "NIKE AIR MAX 270", price: "$240", imageName: "air-max-270.jpeg"),
         Product(title: "NIKE AIR MAX 2015", price: "$89", imageName: "air-max-2015.jpg"),
-        Product(title: "NIKE SHOX", price: "$110", imageName: "Shox-Blackmetallic.jpg"),
+        Product(title: "NIKE SHOX", price: "$110", imageName: "Shox-Blackmetallic.jpg")
     ]
     
     
@@ -33,7 +33,7 @@ class DataService {
         Product(title: "SWIFT RUN X SHOES", price: "$180", imageName: "Swift_Run_X_Shoes.jpg"),
         Product(title: "ULTRABOOST 5.0 DNA", price: "$310", imageName: "ULTRABOOST_5.0_DNA.jpg"),
         Product(title: "FORUM LOW SHOES", price: "$170", imageName: "Forum_Low_Shoes.jpg"),
-        Product(title: "CODECHAOS 21 PRIMEBLUE SPIKELESS GOLF", price: "$260", imageName: "Codechaos_21_Primeblue_Spikeless_Golf_Shoes.jpg"),
+        Product(title: "CODECHAOS 21 PRIMEBLUE SPIKELESS GOLF", price: "$260", imageName: "Codechaos_21_Primeblue_Spikeless_Golf_Shoes.jpg")
     ]
     
     private let puma = [
@@ -42,7 +42,7 @@ class DataService {
         Product(title: "TRIPLE BASKETBALL", price: "$140", imageName: "TRIPLE-BASKETBALL.jpg"),
         Product(title: "DEVIATE NITRO", price: "$240", imageName: "DEVIATE-NITRO.jpg"),
         Product(title: "CELL VIVE EVO", price: "$110", imageName: "CELL-VIVE-EVO"),
-        Product(title: "COURT RIDER SUMMER DAYS BASKETBALL", price: "$170", imageName:"COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg"),
+        Product(title: "COURT RIDER SUMMER DAYS BASKETBALL", price: "$170", imageName:"COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg")
     ]
     
     private let newBalance = [
@@ -51,11 +51,42 @@ class DataService {
         Product(title: "FRESH FOAM 1080V11" , price: "$290", imageName: "Fresh-Foam1080v11.jpg"),
         Product(title: "FUELCELL PRISM", price: "$200", imageName: "FuelCellPrism.jpg"),
         Product(title: "574v2", price: "$160", imageName: "574v2.jpg"),
-        Product(title: "XC72", price: "$200", imageName: "XC72.jpg"),
+        Product(title: "XC72", price: "$200", imageName: "XC72.jpg")
     ]
     
     func getCategories() -> [Category]{
         return categories
+    }
+    
+    func getProducts(forCategoryTitle title: String) -> [Product] {
+        switch title {
+        case "NIKE":
+            return getNike()
+        case "ADIDAS":
+            return getAdidas()
+        case "PUMA":
+            return getPuma()
+        case "NEWBALANCE":
+            return getNewBalance()
+        default:
+            return getNike()
+        }
+    }
+    
+    func getNike() -> [Product]{
+        return nike
+    }
+    
+    func getAdidas() -> [Product]{
+        return adidas
+    }
+    
+    func getPuma() -> [Product]{
+        return puma
+    }
+    
+    func getNewBalance() -> [Product]{
+        return newBalance
     }
     
     
