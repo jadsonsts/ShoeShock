@@ -12,7 +12,7 @@ struct Category {
     private(set) public var imageName: String
     private(set) public var categoryName: String
     
-    init (imageName: String, categoryName: String) {
+    init (categoryName: String, imageName: String ) {
         self.imageName = imageName
         self.categoryName = categoryName
         

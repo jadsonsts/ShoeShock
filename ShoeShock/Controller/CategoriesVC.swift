@@ -18,7 +18,7 @@ class CategoriesVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         categoriesTable.dataSource = self
         categoriesTable.delegate = self
         categoriesTable.rowHeight = 150
-        title = K.appName
+        navigationItem.title = K.appName
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,13 +38,13 @@ class CategoriesVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = DataService.instance.getCategories()[indexPath.row]
         performSegue(withIdentifier: K.registerSegue, sender: category)
+        categoriesTable.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let productsVC = segue.destination as? ProductsVC {
             assert(sender as? Category != nil)
             productsVC.initProdutcs(category: sender as! Category)
-            //productsVC.headTitle.text = 
         }
     }
 

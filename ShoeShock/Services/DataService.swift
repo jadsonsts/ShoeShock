@@ -11,10 +11,10 @@ class DataService {
     static let instance = DataService()
     
     private let categories = [
-        Category (imageName: "Logo_nike1.png", categoryName: "NIKE"),
-        Category (imageName: "Logo-adidas1.png", categoryName: "ADIDAS"),
-        Category (imageName: "Puma-logo.png", categoryName: "PUMA"),
-        Category (imageName: "New-Balance-Logo.png", categoryName: "NEWBALANCE")
+        Category (categoryName: "NIKE", imageName: "Logo_nike1.png"),
+        Category (categoryName: "ADIDAS", imageName: "Logo-adidas1.png"),
+        Category (categoryName: "PUMA", imageName: "Puma-logo.png"),
+        Category (categoryName: "NEWBALANCE", imageName: "New-Balance-Logo.png")
     ]
     
     private let nike = [

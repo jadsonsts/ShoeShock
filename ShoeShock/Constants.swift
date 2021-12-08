@@ -10,6 +10,7 @@ import Foundation
 struct K {
     static let appName = "👟 ShoeShock ⚡️"
     static let tableCellIdentifier = "Cell"
-    static let CollectionCellIdentifier = "collectionCell"
+    static let collectionCellIdentifier = "collectionCell"
     static let registerSegue = "goToProducts"
+    static let detailsProductSegue = "goToDetails"
 }

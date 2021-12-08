@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF537E9D27608E670074F454 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF537E9C27608E670074F454 /* ProductDetailVC.swift */; };
 		DFB3C6B9275DC3A6001B88E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3C6B8275DC3A6001B88E2 /* AppDelegate.swift */; };
 		DFB3C6BB275DC3A6001B88E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3C6BA275DC3A6001B88E2 /* SceneDelegate.swift */; };
 		DFB3C6BD275DC3A6001B88E2 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3C6BC275DC3A6001B88E2 /* CategoriesVC.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF537E9C27608E670074F454 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		DFB3C6B5275DC3A6001B88E2 /* ShoeShock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeShock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB3C6B8275DC3A6001B88E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFB3C6BA275DC3A6001B88E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				DFB3C6BC275DC3A6001B88E2 /* CategoriesVC.swift */,
 				DFE7123D275F2FB00084BF4F /* ProductsVC.swift */,
+				DF537E9C27608E670074F454 /* ProductDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF537E9D27608E670074F454 /* ProductDetailVC.swift in Sources */,
 				DFB3C6BD275DC3A6001B88E2 /* CategoriesVC.swift in Sources */,
 				DFC323FA275DF39200A55806 /* Category.swift in Sources */,
 				DFB3C6B9275DC3A6001B88E2 /* AppDelegate.swift in Sources */,
