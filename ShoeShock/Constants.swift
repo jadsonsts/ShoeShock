@@ -13,4 +13,6 @@ struct K {
     static let collectionCellIdentifier = "collectionCell"
     static let registerSegue = "goToProducts"
     static let detailsProductSegue = "goToDetails"
+    static let comboImageSet = "imagesSet"
+    
 }

@@ -10,13 +10,17 @@ import Foundation
 
 struct Product {
     
+    private (set) public var ID: Int
     private (set) public var title: String
     private (set) public var price: String
     private (set) public var imageName: String
     
-    init(title: String, price: String, imageName: String) {
+    
+    init(ID: Int, title: String, price: String, imageName: String) {
+        self.ID = ID
         self.title = title
         self.price = price
         self.imageName = imageName
+        
     }
 }
