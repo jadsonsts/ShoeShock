@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1725" y="80"/>
+            <point key="canvasLocation" x="1416" y="177"/>
         </scene>
         <!--ProductsVC-->
         <scene sceneID="7H2-Lp-KOa">
@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7O7-z7-Nnw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486.9565217391305" y="79.6875"/>
+            <point key="canvasLocation" x="2294" y="177"/>
         </scene>
         <!--Product DetailVC-->
         <scene sceneID="OYe-Tm-HAa">
@@ -541,7 +541,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRw-xU-Qld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3282.608695652174" y="79.6875"/>
+            <point key="canvasLocation" x="3146" y="177"/>
+        </scene>
+        <!--CartVC-->
+        <scene sceneID="2iP-Zd-Q9w">
+            <objects>
+                <viewController id="ArF-lq-bdq" customClass="CartVC" customModule="ShoeShock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xcx-mX-QbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YoZ-6v-J5S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IJN-7D-1DC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNl-q9-54x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3234.7826086956525" y="-565.17857142857144"/>
         </scene>
         <!--Categories-->
         <scene sceneID="hVd-ai-fdR">
@@ -567,7 +583,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2h-wQ-eRG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937.68115942028987" y="79.6875"/>
+            <point key="canvasLocation" x="1416" y="-564"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2a7-Po-VEW">
@@ -579,19 +595,49 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.36470588240000001" blue="0.63529411759999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.066666666669999999" green="0.12549019610000001" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="selectionIndicatorTintColor" red="0.0" green="0.050980392159999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="1Ft-cm-PpO" kind="relationship" relationship="viewControllers" id="mZl-Pb-adL"/>
+                        <segue destination="iFk-aL-aVf" kind="relationship" relationship="viewControllers" id="mwK-FC-fTC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHd-gH-fbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1725" y="-711"/>
+            <point key="canvasLocation" x="1864" y="-1333"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="drK-4h-JLP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iFk-aL-aVf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" id="gJl-p2-LHc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bzg-ac-djk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="1" green="0.36470588240000001" blue="0.63529411759999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="1" green="0.36470588240000001" blue="0.63529411759999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ArF-lq-bdq" kind="relationship" relationship="rootViewController" id="UlD-Hb-M00"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ia-ll-8F3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2324.6376811594205" y="-565.17857142857144"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo-adidas1" width="2560" height="1729"/>
         <image name="NMD_R1_White" width="840" height="840"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

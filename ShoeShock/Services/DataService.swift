@@ -19,14 +19,13 @@ class DataService {
     ]
     
     private let nike = [
-        Product(ID: 1, title: "NIKE Air Force 1", price: "$180", imageName: "air-force-1.jpeg"),
+        Product(ID: 1, title: "NIKE AIR FORCE 1", price: "$190", imageName: "air-force-1.jpeg"),
         Product(ID: 2, title: "NIKE AIR MAX 90", price: "$220", imageName: "air-max-90.jpeg"),
         Product(ID: 3, title: "NIKE AIR MAX 270", price: "$240", imageName: "air-max-270-blue.jpeg"),
-        Product(ID: 4, title: "NIKE AIR MAX 270", price: "$240", imageName: "air-max-270.jpeg"),
-        Product(ID: 5, title: "NIKE AIR MAX 2015", price: "$89", imageName: "air-max-2015.jpg"),
-        Product(ID: 6, title: "NIKE SHOX", price: "$110", imageName: "Shox-Blackmetallic.jpg")
+        Product(ID: 4, title: "JORDAN MAX AURA 3", price: "$210", imageName: "jordan-max-aura-3.jpeg"),
+        Product(ID: 5, title: "NIKE AIR MAX GENOME", price: "$270", imageName: "Air-Max-Genome.jpeg"),
+        Product(ID: 6, title: "LEBRON 18 LOW", price: "$260", imageName: "LeBron-18-Low.jpeg")
     ]
-    
     
     private let adidas = [
         Product(ID: 7, title: "SUPERSTAR VEGAN SHOES", price: "$140", imageName: "Superstar_Vegan_Black.jpg"),
@@ -42,7 +41,7 @@ class DataService {
         Product(ID: 14, title: "SOFTRIDE ENZO NXT FADE", price: "$120", imageName: "SOFTRIDE-ENZO-NXT-FADE.jpg"),
         Product(ID: 15, title: "TRIPLE BASKETBALL", price: "$140", imageName: "TRIPLE-BASKETBALL.jpg"),
         Product(ID: 16, title: "DEVIATE NITRO", price: "$240", imageName: "DEVIATE-NITRO.jpg"),
-        Product(ID: 17, title: "CELL VIVE EVO", price: "$110", imageName: "CELL-VIVE-EVO"),
+        Product(ID: 17, title: "CELL VIVE EVO", price: "$110", imageName: "CELL-VIVE-EVO.jpg"),
         Product(ID: 18, title: "COURT RIDER SUMMER DAYS BASKETBALL", price: "$170", imageName:"COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg")
     ]
     
@@ -54,6 +53,12 @@ class DataService {
         Product(ID: 23, title: "574v2", price: "$160", imageName: "574v2.jpg"),
         Product(ID: 24, title: "XC72", price: "$200", imageName: "XC72.jpg")
     ]
+
+    
+    private let selectedProduct = [Product]()
+    
+//    private let cart = [selectedProduct]
+    
     
     func getCategories() -> [Category]{
         return categories
@@ -105,6 +110,7 @@ class DataService {
         ImageSet(imageName: "8NMD_R1_White.jpg"),
         ImageSet(imageName: "9NMD_R1_White.jpg")
     ]
+    
     private let codechaos = [
         ImageSet(imageName: "Codechaos_21_Primeblue_Spikeless_Golf_Shoes.jpg"),
         ImageSet(imageName: "2Codechaos_21_Primeblue_Spikeless_Golf_Shoes.jpg"),
@@ -114,7 +120,6 @@ class DataService {
         ImageSet(imageName: "6Codechaos_21_Primeblue_Spikeless_Golf_Shoes.jpg"),
         ImageSet(imageName: "7Codechaos_21_Primeblue_Spikeless_Golf_Shoes.jpg"),
         ImageSet(imageName: "8Codechaos_21_Primeblue_Spikeless_Golf_Shoes.jpg")
-        
     ]
     
     private let forum = [
@@ -186,82 +191,248 @@ class DataService {
     
     //MARK: - NIKE
     
-    //        func getCodechaos() -> [ImageSet] {
-    //            return codechaos
-    //        }
-    //
-    //        func getCodechaos() -> [ImageSet] {
-    //            return codechaos
-    //        }
-    //
-    //        func getCodechaos() -> [ImageSet] {
-    //            return codechaos
-    //        }
-    //
-    //        func getCodechaos() -> [ImageSet] {
-    //            return codechaos
-    //        }
-    //
-    //        func getCodechaos() -> [ImageSet] {
-    //            return codechaos
-    //        }
-    //
-    //        func getCodechaos() -> [ImageSet] {
-    //            return codechaos
-    //        }
+    private let force = [
+        ImageSet(imageName: "air-force-1.jpeg"),
+        ImageSet(imageName: "7air-force-1.jpeg"),
+        ImageSet(imageName: "2air-force-1.jpeg"),
+        ImageSet(imageName: "3air-force-1.jpeg"),
+        ImageSet(imageName: "4air-force-1.jpeg"),
+        ImageSet(imageName: "5air-force-1.jpeg"),
+        ImageSet(imageName: "6air-force-1.jpeg")
+    ]
+    
+    private let max = [
+        ImageSet(imageName: "air-max-90.jpeg"),
+        ImageSet(imageName: "7air-max-90.jpeg"),
+        ImageSet(imageName: "2air-max-90.jpeg"),
+        ImageSet(imageName: "3air-max-90.jpeg"),
+        ImageSet(imageName: "4air-max-90.jpeg"),
+        ImageSet(imageName: "5air-max-90.jpeg"),
+        ImageSet(imageName: "6air-max-90.jpeg")
+    ]
+    
+    private let max270 = [
+        ImageSet(imageName: "air-max-270-blue.jpeg"),
+        ImageSet(imageName: "2air-max-270-blue.jpeg"),
+        ImageSet(imageName: "3air-max-270-blue.jpeg"),
+        ImageSet(imageName: "4air-max-270-blue.jpeg"),
+        ImageSet(imageName: "5air-max-270-blue.jpeg"),
+        ImageSet(imageName: "6air-max-270-blue.jpeg"),
+        ImageSet(imageName: "7air-max-270-blue.jpeg")
+    ]
+    
+    private let jordan = [
+        ImageSet(imageName: "jordan-max-aura-3.jpeg"),
+        ImageSet(imageName: "2jordan-max-aura-3.jpeg"),
+        ImageSet(imageName: "3jordan-max-aura-3.jpeg"),
+        ImageSet(imageName: "4jordan-max-aura-3.jpeg"),
+        ImageSet(imageName: "5jordan-max-aura-3.jpeg"),
+        ImageSet(imageName: "6jordan-max-aura-3.jpeg"),
+        ImageSet(imageName: "7jordan-max-aura-3.jpeg")
+    ]
+    
+    private let genome = [
+        ImageSet(imageName: "Air-Max-Genome.jpeg"),
+        ImageSet(imageName: "2Air-Max-Genome.jpeg"),
+        ImageSet(imageName: "3Air-Max-Genome.jpeg"),
+        ImageSet(imageName: "4Air-Max-Genome.jpeg"),
+        ImageSet(imageName: "5Air-Max-Genome.jpeg"),
+        ImageSet(imageName: "6Air-Max-Genome.jpeg"),
+        ImageSet(imageName: "7Air-Max-Genome.jpeg")
+    ]
+    
+    private let lebron = [
+        ImageSet(imageName: "LeBron-18-Low.jpeg"),
+        ImageSet(imageName: "2LeBron-18-Low.jpeg"),
+        ImageSet(imageName: "3LeBron-18-Low.jpeg"),
+        ImageSet(imageName: "4LeBron-18-Low.jpeg"),
+        ImageSet(imageName: "5LeBron-18-Low.jpeg"),
+        ImageSet(imageName: "6LeBron-18-Low.jpeg"),
+        ImageSet(imageName: "7LeBron-18-Low.jpeg")
+    ]
+    
+    func getForce() -> [ImageSet] {
+        return force
+    }
+    
+    func getMax() -> [ImageSet] {
+        return max
+    }
+    
+    func getMax270() -> [ImageSet] {
+        return max270
+    }
+    
+    func getGenome() -> [ImageSet] {
+        return genome
+    }
+    
+    func getJordan() -> [ImageSet] {
+        return jordan
+    }
+    
+    func getLebron() -> [ImageSet] {
+        return lebron
+    }
     
     
     //MARK: - PUMA
+    private let flyer = [
+        ImageSet(imageName: "FLYER-RUNNING-SHOES.jpg"),
+        ImageSet(imageName: "2FLYER-RUNNING-SHOES.jpg"),
+        ImageSet(imageName: "3FLYER-RUNNING-SHOES.jpg"),
+        ImageSet(imageName: "4FLYER-RUNNING-SHOES.jpg"),
+        ImageSet(imageName: "5FLYER-RUNNING-SHOES.jpg"),
+        ImageSet(imageName: "6FLYER-RUNNING-SHOES.jpg")
+    ]
     
-    //func getCodechaos() -> [ImageSet] {
-    //        return codechaos
-    //    }
-    //
-    //    func getCodechaos() -> [ImageSet] {
-    //        return codechaos
-    //    }
-    //
-    //    func getCodechaos() -> [ImageSet] {
-    //        return codechaos
-    //    }
-    //
-    //    func getCodechaos() -> [ImageSet] {
-    //        return codechaos
-    //    }
-    //
-    //    func getCodechaos() -> [ImageSet] {
-    //        return codechaos
-    //    }
-    //
-    //    func getCodechaos() -> [ImageSet] {
-    //        return codechaos
-    //    }
+    private let softride = [
+        ImageSet(imageName: "SOFTRIDE-ENZO-NXT-FADE.jpg"),
+        ImageSet(imageName: "2SOFTRIDE-ENZO-NXT-FADE.jpg"),
+        ImageSet(imageName: "3SOFTRIDE-ENZO-NXT-FADE.jpg"),
+        ImageSet(imageName: "4SOFTRIDE-ENZO-NXT-FADE.jpg"),
+        ImageSet(imageName: "5SOFTRIDE-ENZO-NXT-FADE.jpg"),
+        ImageSet(imageName: "6SOFTRIDE-ENZO-NXT-FADE.jpg"),
+        ImageSet(imageName: "7SOFTRIDE-ENZO-NXT-FADE.jpg")
+    ]
+    
+    private let triple = [
+        ImageSet(imageName: "TRIPLE-BASKETBALL.jpg"),
+        ImageSet(imageName: "2TRIPLE-BASKETBALL.jpg"),
+        ImageSet(imageName: "3TRIPLE-BASKETBALL.jpg"),
+        ImageSet(imageName: "4TRIPLE-BASKETBALL.jpg"),
+        ImageSet(imageName: "5TRIPLE-BASKETBALL.jpg"),
+        ImageSet(imageName: "6TRIPLE-BASKETBALL.jpg")
+    ]
+    
+    private let deviate = [
+        ImageSet(imageName: "DEVIATE-NITRO.jpg"),
+        ImageSet(imageName: "2DEVIATE-NITRO.jpg"),
+        ImageSet(imageName: "3DEVIATE-NITRO.jpg"),
+        ImageSet(imageName: "4DEVIATE-NITRO.jpg"),
+        ImageSet(imageName: "5DEVIATE-NITRO.jpg"),
+        ImageSet(imageName: "6DEVIATE-NITRO.jpg"),
+        ImageSet(imageName: "7DEVIATE-NITRO.jpg")
+    ]
+    
+    private let cellVivo = [
+        ImageSet(imageName: "CELL-VIVE-EVO.jpg"),
+        ImageSet(imageName: "2CELL-VIVE-EVO.jpg"),
+        ImageSet(imageName: "3CELL-VIVE-EVO.jpg"),
+        ImageSet(imageName: "4CELL-VIVE-EVO.jpg"),
+        ImageSet(imageName: "5CELL-VIVE-EVO.jpg"),
+        ImageSet(imageName: "6CELL-VIVE-EVO.jpg"),
+        ImageSet(imageName: "7CELL-VIVE-EVO.jpg")
+    ]
+    
+    private let court = [
+        ImageSet(imageName: "COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg"),
+        ImageSet(imageName: "2COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg"),
+        ImageSet(imageName: "3COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg"),
+        ImageSet(imageName: "4COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg"),
+        ImageSet(imageName: "5COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg"),
+        ImageSet(imageName: "6COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg")
+    ]
+    
+    
+    func getFlyer() -> [ImageSet] {
+        return flyer
+    }
+    
+    func getSoftride() -> [ImageSet] {
+        return softride
+    }
+    
+    func getTriple() -> [ImageSet] {
+        return triple
+    }
+    
+    func getDeviate() -> [ImageSet] {
+        return deviate
+    }
+    
+    func getCellVivo() -> [ImageSet] {
+        return cellVivo
+    }
+    
+    func getCourt() -> [ImageSet] {
+        return court
+    }
     
     //MARK: - NEW BALANCE
-        
-        //func getCodechaos() -> [ImageSet] {
-        //        return codechaos
-        //    }
-        //
-        //    func getCodechaos() -> [ImageSet] {
-        //        return codechaos
-        //    }
-        //
-        //    func getCodechaos() -> [ImageSet] {
-        //        return codechaos
-        //    }
-        //
-        //    func getCodechaos() -> [ImageSet] {
-        //        return codechaos
-        //    }
-        //
-        //    func getCodechaos() -> [ImageSet] {
-        //        return codechaos
-        //    }
-        //
-        //    func getCodechaos() -> [ImageSet] {
-        //        return codechaos
-        //    }
+    
+    private let green574 = [
+        ImageSet(imageName: "574v2.jpg"),
+        ImageSet(imageName: "2_574v2.jpg"),
+        ImageSet(imageName: "3_574v2.jpg"),
+        ImageSet(imageName: "4_574v2.jpg"),
+        ImageSet(imageName: "5_574v2.jpg")
+    ]
+    
+    private let bb480 = [
+        ImageSet(imageName: "BB480.jpg"),
+        ImageSet(imageName: "2_BB480.jpg"),
+        ImageSet(imageName: "3_BB480.jpg"),
+        ImageSet(imageName: "4_BB480.jpg"),
+        ImageSet(imageName: "5_BB480.jpg")
+    ]
+    
+    private let freshFoam = [
+        ImageSet(imageName: "Fresh-Foam1080v11.jpg"),
+        ImageSet(imageName: "2Fresh-Foam1080v11"),
+        ImageSet(imageName: "3Fresh-Foam1080v11"),
+        ImageSet(imageName: "4Fresh-Foam1080v11"),
+        ImageSet(imageName: "5Fresh-Foam1080v11")
+    ]
+    
+    private let fuelCell = [
+        ImageSet(imageName: "FuelCellPrism.jpg"),
+        ImageSet(imageName: "2FuelCellPrism.jpg"),
+        ImageSet(imageName: "3FuelCellPrism.jpg"),
+        ImageSet(imageName: "4FuelCellPrism.jpg"),
+        ImageSet(imageName: "5FuelCellPrism.jpg")
+    ]
+    
+    private let sahele = [
+        ImageSet(imageName: "SaleheBembury-574-YURT.jpg"),
+        ImageSet(imageName: "2SaleheBembury-574-YURT.jpg"),
+        ImageSet(imageName: "3SaleheBembury-574-YURT.jpg"),
+        ImageSet(imageName: "4SaleheBembury-574-YURT.jpg"),
+        ImageSet(imageName: "5SaleheBembury-574-YURT.jpg")
+    ]
+    
+    private let xc72 = [
+        ImageSet(imageName: "XC72.jpg"),
+        ImageSet(imageName: "2_XC72.jpg"),
+        ImageSet(imageName: "3_XC72.jpg"),
+        ImageSet(imageName: "4_XC72.jpg"),
+        ImageSet(imageName: "5_XC72.jpg")
+    ]
+    
+    
+    func getGreen574() -> [ImageSet] {
+        return green574
+    }
+    
+    func getBB480() -> [ImageSet] {
+        return bb480
+    }
+    
+    func getFreshFoam() -> [ImageSet] {
+        return freshFoam
+    }
+    
+    func getFuelCell() -> [ImageSet] {
+        return fuelCell
+    }
+    
+    func getSahele() -> [ImageSet] {
+        return sahele
+    }
+    
+    func getXC72() -> [ImageSet] {
+        return xc72
+    }
     
     
     //MARK: - GETIMAGE METHOD
@@ -269,21 +440,21 @@ class DataService {
     func getImageSet(forId id: Int) -> [ImageSet] {
         switch id {
         case 1:
-            return getNMD()
+            return getForce()
         case 2:
-            return getCodechaos()
+            return getMax()
         case 3:
-            return getCodechaos()
+            return getMax270()
         case 4:
-            return getCodechaos()
+            return getJordan()
         case 5:
-            return getCodechaos()
+            return getGenome()
         case 6:
-            return getCodechaos()
+            return getLebron()
         case 7:
             return getSuperstar()
         case 8:
-            return getNMD()//ok
+            return getNMD()
         case 9:
             return getSwift()
         case 10:
@@ -291,31 +462,31 @@ class DataService {
         case 11:
             return getForum()
         case 12:
-            return getCodechaos()//ok
+            return getCodechaos()
         case 13:
-            return getCodechaos()
+            return getFlyer()
         case 14:
-            return getCodechaos()
+            return getSoftride()
         case 15:
-            return getCodechaos()
+            return getTriple()
         case 16:
-            return getCodechaos()
+            return getDeviate()
         case 17:
-            return getCodechaos()
+            return getCellVivo()
         case 18:
-            return getCodechaos()
+            return getCourt()
         case 19:
-            return getCodechaos()
+            return getSahele()
         case 20:
-            return getCodechaos()
+            return getBB480()
         case 21:
-            return getCodechaos()
+            return getFreshFoam()
         case 22:
-            return getCodechaos()
+            return getFuelCell()
         case 23:
-            return getCodechaos()
+            return getGreen574()
         case 24:
-            return getCodechaos()
+            return getXC72()
         default:
             return getNMD()
         }
