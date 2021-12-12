@@ -17,18 +17,18 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     var product: Product!
     var imagesSet = [ImageSet]()
+    var productCart = Cart()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         productName.text = product.title
-        productPrice.text = product.price
+        productPrice.text = String(format: "$%.0f",product.price)
         sliderCollectionView.delegate = self
         sliderCollectionView.dataSource = self
         
         pageView.numberOfPages = imagesSet.count
-        //pageView.currentPage = imagesSet.startIndex
         productSize.text = nil
         
     }
@@ -52,12 +52,37 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
         return ImageSetCell()
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let productCart = productCart.products.[indexPath.row]
+//        productCart.addProduct(product: productCart)
+//    }
+    
     
     @IBAction func sizePressed (_ sender: UIButton) {
         productSize.text = sender.currentTitle
     }
     
     @IBAction func addToCartPressed(_ sender: UIButton) {
+        if productSize.text != nil {
+            let alert = UIAlertController(title: "Awesome 🥳", message: "\(product.title) has been added to your cart" , preferredStyle: .alert)
+                    
+                    let action = UIAlertAction(title: "OK", style: .default) { (action) in
+                        
+                        
+                        //productCart.addProduct(product: <#T##Product#>)
+                        
+                    }
+                    alert.addAction(action)
+                    present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Ops!", message: "Please select a size" , preferredStyle: .alert)
+                    
+                    let action = UIAlertAction(title: "OK", style: .default) { (action) in
+                        
+                    }
+                    alert.addAction(action)
+                    present(alert, animated: true, completion: nil)
+        }
         
     }
     
