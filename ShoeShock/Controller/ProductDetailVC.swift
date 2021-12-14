@@ -52,11 +52,6 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
         return ImageSetCell()
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let productCart = productCart.products.[indexPath.row]
-//        productCart.addProduct(product: productCart)
-//    }
-    
     
     @IBAction func sizePressed (_ sender: UIButton) {
         productSize.text = sender.currentTitle
@@ -68,8 +63,8 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
                     
                     let action = UIAlertAction(title: "OK", style: .default) { (action) in
                         
-                        
-                        //productCart.addProduct(product: <#T##Product#>)
+//                        let product = product(
+                        self.productCart.addProduct(product: self.product)
                         
                     }
                     alert.addAction(action)
