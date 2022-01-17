@@ -55,9 +55,14 @@ class DataService {
     ]
 
     
-    private let selectedProduct = [SelectedProduct]()
+//    private let selectedProduct = [SelectedProduct]()
+    private let selectedProduct = [
+        SelectedProduct(product: Product (ID: 19, title: "SALEHE BEMBURY 574 YURT" , price: 270, imageName: "SaleheBembury-574-YURT.jpg"), quantity: 1, totalCost: 0.0),
+        SelectedProduct(product: Product (ID: 19, title: "SALEHE BEMBURY 574 YURT" , price: 270, imageName: "SaleheBembury-574-YURT.jpg"), quantity: 1, totalCost: 0.0)
+        ]
     
     func getProductsCart() -> [SelectedProduct]{
+        print("passed here")
         return selectedProduct
     }
 

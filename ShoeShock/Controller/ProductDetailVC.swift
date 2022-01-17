@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     @IBOutlet weak var pageView: UIPageControl!
@@ -52,6 +52,12 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
         return ImageSetCell()
     }
     
+    //SET THE COLLECTION'S SIZE TO IT'S FRAME
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    
     
     @IBAction func sizePressed (_ sender: UIButton) {
         productSize.text = sender.currentTitle
@@ -65,6 +71,7 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
                         
 //                        let product = product(
                         self.productCart.addProduct(product: self.product)
+                        alert.dismiss(animated: true, completion: nil)
                         
                     }
                     alert.addAction(action)
@@ -73,7 +80,7 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
             let alert = UIAlertController(title: "Ops!", message: "Please select a size" , preferredStyle: .alert)
                     
                     let action = UIAlertAction(title: "OK", style: .default) { (action) in
-                        
+                        alert.dismiss(animated: true, completion: nil)
                     }
                     alert.addAction(action)
                     present(alert, animated: true, completion: nil)

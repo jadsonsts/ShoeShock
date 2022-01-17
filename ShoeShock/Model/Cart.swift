@@ -9,10 +9,11 @@ import Foundation
 
 struct Cart {
     
-    private (set) public var products = [SelectedProduct]()
+    public var products = [SelectedProduct]()
+    
     
     mutating func addProduct(product: Product) {
-        let selectedProduct = SelectedProduct(product: product, quantity: 1)
+        let selectedProduct = SelectedProduct(product: product, quantity: 1, totalCost: 0.0 )
         products.append(selectedProduct)
     }
     

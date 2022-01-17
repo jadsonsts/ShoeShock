@@ -9,7 +9,7 @@ import UIKit
 
 class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let cartProduct = Cart()
+    let cartProduct = [SelectedProduct]()
     
     @IBOutlet weak var cartTable: UITableView!
     @IBOutlet weak var checkoutTotal: UILabel!
@@ -20,18 +20,27 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cartTable.dataSource = self
         cartTable.delegate = self
         
-        tabBarItem.badgeValue = "\(cartProduct.products.count)"
+        tabBarItem.badgeValue = "\(cartProduct.count)"
+        cartTable.reloadData()
+        
+        cartTable.rowHeight = 110
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        cartTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cartProduct.products.count
+        return DataService.instance.getProductsCart().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: K.cartCellIdentifier) as? CartCell {
             let productCart = DataService.instance.getProductsCart()[indexPath.row]
             cell.updateTable(selProduct: productCart)
-            checkoutTotal.text = "\(cartProduct.getTotal())"
+//            checkoutTotal.text = "\(cartProduct.getTotal())"
             return cell
         } else {
             return CartCell()
