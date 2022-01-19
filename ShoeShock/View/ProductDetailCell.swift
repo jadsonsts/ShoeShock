@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageSetCell: UICollectionViewCell {
+class ProductDetailCell: UICollectionViewCell {
     @IBOutlet weak var imageSet: UIImageView!
     
     func updateImages (images: ImageSet) {

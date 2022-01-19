@@ -16,14 +16,15 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var productQty: UILabel!
     
     var selectedProduct: SelectedProduct!
+
     
-    func updateTable (selProduct: SelectedProduct) {
+    func updateTable (selProduct: SelectedProduct, quantity: Int) {
         
         productName.text = selProduct.product.title
         productImage.image = UIImage(named: selProduct.product.imageName)
         productValue.text = "$\(selProduct.product.price * Double(selProduct.quantity))"
         productSize.text = "7"
-        productQty.text = String(1)
+        productQty.text = "\(quantity)"
         
     }
     

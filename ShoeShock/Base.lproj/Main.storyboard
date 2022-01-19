@@ -221,7 +221,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imagesSet" id="VRQ-Tg-Ppm" customClass="ImageSetCell" customModule="ShoeShock" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imagesSet" id="VRQ-Tg-Ppm" customClass="ProductDetailCell" customModule="ShoeShock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ghX-ku-vrI">
@@ -255,10 +255,11 @@
                                 </connections>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="se3-ip-HsP">
-                                <rect key="frame" x="20" y="390" width="374" height="26"/>
+                                <rect key="frame" x="0.0" y="409" width="414" height="26"/>
+                                <color key="backgroundColor" red="0.0" green="0.050980392159999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q6-tb-gBW">
-                                <rect key="frame" x="20" y="456" width="374" height="25"/>
+                                <rect key="frame" x="20" y="465" width="374" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Ri6-5d-KTX"/>
                                 </constraints>
@@ -267,7 +268,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="62H-Ww-1fi">
-                                <rect key="frame" x="20" y="521" width="374" height="120"/>
+                                <rect key="frame" x="20" y="510" width="374" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="86K-fE-ruA">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
@@ -482,7 +483,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8dz-h8-aIm">
-                                <rect key="frame" x="20" y="681" width="243" height="25"/>
+                                <rect key="frame" x="20" y="660" width="243" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUP-TK-3kn">
                                         <rect key="frame" x="0.0" y="0.0" width="116.5" height="25"/>
@@ -507,7 +508,7 @@
                         <constraints>
                             <constraint firstItem="vUD-Vl-ZWV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lQk-ad-7Bo" secondAttribute="leading" id="0Z1-a7-MD4"/>
                             <constraint firstItem="Ggq-6v-17z" firstAttribute="trailing" secondItem="lQk-ad-7Bo" secondAttribute="trailing" id="28g-wD-tpG"/>
-                            <constraint firstItem="8dz-h8-aIm" firstAttribute="top" secondItem="62H-Ww-1fi" secondAttribute="bottom" constant="40" id="956-3G-4we"/>
+                            <constraint firstItem="8dz-h8-aIm" firstAttribute="top" secondItem="62H-Ww-1fi" secondAttribute="bottom" constant="30" id="956-3G-4we"/>
                             <constraint firstAttribute="bottomMargin" secondItem="KNE-kc-Tem" secondAttribute="bottom" constant="20" id="Br9-qA-ZLe"/>
                             <constraint firstItem="GPt-Qb-Bp3" firstAttribute="leading" secondItem="lQk-ad-7Bo" secondAttribute="leading" id="Cdc-4e-7OU"/>
                             <constraint firstItem="lQk-ad-7Bo" firstAttribute="trailing" secondItem="GPt-Qb-Bp3" secondAttribute="trailing" id="FYz-4l-52O"/>
@@ -515,19 +516,19 @@
                             <constraint firstItem="0q6-tb-gBW" firstAttribute="leading" secondItem="lQk-ad-7Bo" secondAttribute="leading" constant="20" id="PKl-R1-G7K"/>
                             <constraint firstItem="8dz-h8-aIm" firstAttribute="leading" secondItem="lQk-ad-7Bo" secondAttribute="leading" constant="20" id="UNQ-8P-4cT"/>
                             <constraint firstItem="Ggq-6v-17z" firstAttribute="leading" secondItem="lQk-ad-7Bo" secondAttribute="leading" id="Urm-YS-oKN"/>
-                            <constraint firstItem="se3-ip-HsP" firstAttribute="leading" secondItem="lQk-ad-7Bo" secondAttribute="leading" constant="20" id="Xw3-fM-pyX"/>
+                            <constraint firstItem="se3-ip-HsP" firstAttribute="leading" secondItem="lQk-ad-7Bo" secondAttribute="leading" id="Xw3-fM-pyX"/>
                             <constraint firstItem="GPt-Qb-Bp3" firstAttribute="top" secondItem="vUD-Vl-ZWV" secondAttribute="bottom" constant="5" id="YB2-eE-Dul"/>
                             <constraint firstItem="KNE-kc-Tem" firstAttribute="centerX" secondItem="SnV-Ur-Rkv" secondAttribute="centerX" id="Ydf-2i-tO9"/>
                             <constraint firstItem="lQk-ad-7Bo" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vUD-Vl-ZWV" secondAttribute="trailing" id="ago-O5-vWf"/>
                             <constraint firstItem="vUD-Vl-ZWV" firstAttribute="top" secondItem="lQk-ad-7Bo" secondAttribute="top" constant="20" id="bt3-j4-dvL"/>
-                            <constraint firstItem="0q6-tb-gBW" firstAttribute="top" secondItem="se3-ip-HsP" secondAttribute="bottom" constant="40" id="dQg-s9-taa"/>
+                            <constraint firstItem="0q6-tb-gBW" firstAttribute="top" secondItem="se3-ip-HsP" secondAttribute="bottom" constant="30" id="dQg-s9-taa"/>
                             <constraint firstItem="KNE-kc-Tem" firstAttribute="leading" secondItem="lQk-ad-7Bo" secondAttribute="leading" constant="20" id="dX0-hw-rri"/>
-                            <constraint firstItem="62H-Ww-1fi" firstAttribute="top" secondItem="0q6-tb-gBW" secondAttribute="bottom" constant="40" id="lua-h1-tg6"/>
+                            <constraint firstItem="62H-Ww-1fi" firstAttribute="top" secondItem="0q6-tb-gBW" secondAttribute="bottom" constant="20" id="lua-h1-tg6"/>
                             <constraint firstItem="Ggq-6v-17z" firstAttribute="top" secondItem="GPt-Qb-Bp3" secondAttribute="bottom" constant="10" id="ndg-Mc-1sv"/>
                             <constraint firstItem="lQk-ad-7Bo" firstAttribute="trailing" secondItem="62H-Ww-1fi" secondAttribute="trailing" constant="20" id="oVI-Ck-Pcz"/>
                             <constraint firstItem="0q6-tb-gBW" firstAttribute="centerX" secondItem="SnV-Ur-Rkv" secondAttribute="centerX" id="pOT-VK-v8s"/>
-                            <constraint firstItem="lQk-ad-7Bo" firstAttribute="trailing" secondItem="se3-ip-HsP" secondAttribute="trailing" constant="20" id="qUX-fC-jdW"/>
-                            <constraint firstItem="se3-ip-HsP" firstAttribute="bottom" secondItem="Ggq-6v-17z" secondAttribute="bottom" constant="7" id="vnX-9H-g1a"/>
+                            <constraint firstItem="lQk-ad-7Bo" firstAttribute="trailing" secondItem="se3-ip-HsP" secondAttribute="trailing" id="qUX-fC-jdW"/>
+                            <constraint firstItem="se3-ip-HsP" firstAttribute="bottom" secondItem="Ggq-6v-17z" secondAttribute="bottom" constant="26" id="vnX-9H-g1a"/>
                             <constraint firstItem="vUD-Vl-ZWV" firstAttribute="centerX" secondItem="SnV-Ur-Rkv" secondAttribute="centerX" id="zFU-oz-at5"/>
                         </constraints>
                     </view>
@@ -723,7 +724,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.59999999999999998" green="0.8666666666666667" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="1" green="0.36470588235294116" blue="0.63529411764705879" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="0.36470588240000001" blue="0.63529411759999999" alpha="0.79982408940397354" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
                             <color key="backgroundColor" red="1" green="0.36470588240000001" blue="0.63529411759999999" alpha="0.79643522350993379" colorSpace="custom" customColorSpace="calibratedRGB"/>

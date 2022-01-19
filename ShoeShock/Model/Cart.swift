@@ -10,6 +10,8 @@ import Foundation
 struct Cart {
     
     public var products = [SelectedProduct]()
+    var quantity = 0
+    var totalCost = 0.0
     
     
     mutating func addProduct(product: Product) {

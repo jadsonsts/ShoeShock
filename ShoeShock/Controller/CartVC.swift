@@ -20,7 +20,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cartTable.dataSource = self
         cartTable.delegate = self
         
-        tabBarItem.badgeValue = "\(cartProduct.count)"
+        //tabBarItem.badgeValue = "\(cartProduct.count)"
         cartTable.reloadData()
         
         cartTable.rowHeight = 110
@@ -39,7 +39,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: K.cartCellIdentifier) as? CartCell {
             let productCart = DataService.instance.getProductsCart()[indexPath.row]
-            cell.updateTable(selProduct: productCart)
+            cell.updateTable(selProduct: productCart, quantity: 1)
 //            checkoutTotal.text = "\(cartProduct.getTotal())"
             return cell
         } else {

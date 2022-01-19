@@ -29,7 +29,16 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
         sliderCollectionView.dataSource = self
         
         pageView.numberOfPages = imagesSet.count
+//        pageView.backgroundColor = .lightGray
+        pageView.addTarget(self, action: #selector(pageControlDidChange(_:)), for: .valueChanged)
+        
         productSize.text = nil
+    }
+    
+    @objc private func pageControlDidChange(_ sender: UIPageControl){
+        let current = sender.currentPage
+        sliderCollectionView.setContentOffset(CGPoint(x: CGFloat(current) * view.frame.size.width,
+                                                      y: 0), animated: true)
         
     }
 
@@ -44,19 +53,18 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.comboImageSet, for: indexPath) as? ImageSetCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.comboImageSet, for: indexPath) as? ProductDetailCell {
             let image = imagesSet[indexPath.row]
             cell.updateImages(images: image)
             return cell
         }
-        return ImageSetCell()
+        return ProductDetailCell()
     }
     
     //SET THE COLLECTION'S SIZE TO IT'S FRAME
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
-    
     
     
     @IBAction func sizePressed (_ sender: UIButton) {
@@ -87,6 +95,10 @@ class ProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionV
         }
         
     }
-    
-    
+}
+extension ProductDetailVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageView.currentPage = Int (floorf(Float(sliderCollectionView.contentOffset.x) / Float((sliderCollectionView.frame.size.width))))
+
+    }
 }
