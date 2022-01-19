@@ -14,7 +14,7 @@ class ProductsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     private (set) public var products = [Product]()
     
-    var selectedCategory: Category?
+    //var selectedCategory: Category?
 
 
     override func viewDidLoad() {
@@ -51,6 +51,7 @@ class ProductsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? ProductDetailVC, let product = sender as? Product {
             destinationVC.product = product
+            destinationVC.initImages(product: sender as! Product)
         }
             
     }
