@@ -8,30 +8,37 @@
 import UIKit
 
 class CartCell: UITableViewCell {
-
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productValue: UILabel!
     @IBOutlet weak var productSize: UILabel!
     @IBOutlet weak var productQty: UILabel!
+    @IBOutlet weak var quantityStepper: UIStepper!
     
-    var selectedProduct: SelectedProduct!
-
+    var selectedProduct: SelectedProduct?
     
-    func updateTable (selProduct: SelectedProduct, quantity: Int) {
+    
+    func updateTable (selProduct: SelectedProduct) {
+        
+        quantityStepper.addTarget(self, action: #selector(stepperValueChanges(_:)), for: .valueChanged)
+        //        quantityStepper.value = Double(selProduct.quantity)
         
         productName.text = selProduct.product.title
         productImage.image = UIImage(named: selProduct.product.imageName)
-        productValue.text = "$\(selProduct.product.price * Double(selProduct.quantity))"
-        productSize.text = "7"
-        productQty.text = "\(quantity)"
+        productValue.text = "$\(selProduct.product.price)"
+        productSize.text = "\(selProduct.size)"
+        productQty.text = "\(selProduct.quantity)"
         
     }
     
-    @IBAction func stepperValueChanges(_ sender: UIStepper) {
+    @objc func stepperValueChanges(_ sender: UIStepper) {
         productQty.text = String(format: "%.0f", sender.value)
-        self.selectedProduct.quantity = Int(sender.value)
-        self.selectedProduct.calculateTotal()
+        
+        
+        //        selectedProduct!.quantity = Int(sender.value)
+        //        selectedProduct!.calculateTotal()
     }
-
+    
+    
 }

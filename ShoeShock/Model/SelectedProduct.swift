@@ -8,12 +8,20 @@
 import Foundation
 
 
-struct SelectedProduct {
+class SelectedProduct {
      var product: Product
-     var quantity = 0
+     var quantity: Int
      var totalCost = 0.0
+     var size: String
+//     var size: Int
     
-    mutating func calculateTotal() {
+    init(product: Product, quantity: Int, size: String) {
+        self.product = product
+        self.quantity = quantity
+        self.size = size
+    }
+    
+    func calculateTotal() {
         totalCost = product.price * Double(quantity)
     }
 }
