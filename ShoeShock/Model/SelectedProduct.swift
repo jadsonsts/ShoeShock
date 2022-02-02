@@ -13,7 +13,6 @@ class SelectedProduct {
      var quantity: Int
      var totalCost = 0.0
      var size: String
-//     var size: Int
     
     init(product: Product, quantity: Int, size: String) {
         self.product = product

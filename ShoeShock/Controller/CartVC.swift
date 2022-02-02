@@ -30,8 +30,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cartTable.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return cartProduct.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 
         return Cart.instance.products.count
     }
     

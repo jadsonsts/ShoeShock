@@ -16,13 +16,12 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var productQty: UILabel!
     @IBOutlet weak var quantityStepper: UIStepper!
     
-    var selectedProduct: SelectedProduct?
+    var selectedProduct: SelectedProduct!
     
     
     func updateTable (selProduct: SelectedProduct) {
         
         quantityStepper.addTarget(self, action: #selector(stepperValueChanges(_:)), for: .valueChanged)
-        //        quantityStepper.value = Double(selProduct.quantity)
         
         productName.text = selProduct.product.title
         productImage.image = UIImage(named: selProduct.product.imageName)
@@ -35,9 +34,8 @@ class CartCell: UITableViewCell {
     @objc func stepperValueChanges(_ sender: UIStepper) {
         productQty.text = String(format: "%.0f", sender.value)
         
-        
-        //        selectedProduct!.quantity = Int(sender.value)
-        //        selectedProduct!.calculateTotal()
+        selectedProduct.quantity = Int(sender.value)
+        selectedProduct.calculateTotal()
     }
     
     
