@@ -9,24 +9,26 @@ import UIKit
 
 class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var cartProduct = [SelectedProduct]()
     
     @IBOutlet weak var cartTable: UITableView!
     @IBOutlet weak var checkoutTotal: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         cartTable.dataSource = self
         cartTable.delegate = self
-        
-        cartTable.reloadData()
         cartTable.rowHeight = 110
+        cartTable.reloadData()
+        cartTable.allowsSelection = false
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        //checkoutTotal.text = "\(Cart.instance.getTotal())"
         cartTable.reloadData()
     }
     
@@ -39,13 +41,19 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let productCart = Cart.instance.products[indexPath.row]
             cell.updateTable(selProduct: productCart)
             checkoutTotal.text = "\(Cart.instance.getTotal())"
+            cell.valueDelegate = self
             return cell
         } else {
             return CartCell()
         }
     }
+}
+
+extension CartVC: TotalCartDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func didValueChange() {
+        checkoutTotal.text = "\(Cart.instance.getTotal())"
     }
 }
+
+
