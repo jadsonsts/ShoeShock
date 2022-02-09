@@ -171,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7O7-z7-Nnw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292.753623188406" y="176.78571428571428"/>
+            <point key="canvasLocation" x="2292" y="176.60098522167488"/>
         </scene>
         <!--Product DetailVC-->
         <scene sceneID="OYe-Tm-HAa">
@@ -563,7 +563,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gW2-TT-Wqw">
-                                <rect key="frame" x="0.0" y="138" width="375" height="551.66666666666663"/>
+                                <rect key="frame" x="0.0" y="138.00000000000003" width="375" height="491.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CartCell" rowHeight="80" id="Uv1-Sw-aD2" customClass="CartCell" customModule="ShoeShock" customModuleProvider="target">
@@ -671,7 +671,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jzE-RZ-U0V">
-                                <rect key="frame" x="120" y="699.66666666666663" width="135" height="29.333333333333371"/>
+                                <rect key="frame" x="120" y="653" width="135" height="29.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmR-cH-Mnu">
                                         <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="29.333333333333332"/>
@@ -687,6 +687,19 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IP8-br-5ET" userLabel="Purchase">
+                                <rect key="frame" x="0.0" y="698" width="375" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Purchase 💸">
+                                    <color key="titleColor" red="0.0" green="0.050980392159999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.81176471709999998" green="0.85882353779999998" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="purchaseButtonTapped:" destination="ArF-lq-bdq" eventType="touchUpInside" id="SdT-VD-J7h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YoZ-6v-J5S"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -697,13 +710,20 @@
                             <constraint firstItem="YoZ-6v-J5S" firstAttribute="trailing" secondItem="jzE-RZ-U0V" secondAttribute="trailing" constant="120" id="KGb-CP-Vid"/>
                             <constraint firstItem="gW2-TT-Wqw" firstAttribute="trailing" secondItem="YoZ-6v-J5S" secondAttribute="trailing" id="KHp-SQ-FZl"/>
                             <constraint firstItem="gW2-TT-Wqw" firstAttribute="top" secondItem="xvf-YX-jk6" secondAttribute="bottom" constant="10" id="SVu-Ee-ZDf"/>
-                            <constraint firstItem="jzE-RZ-U0V" firstAttribute="top" secondItem="gW2-TT-Wqw" secondAttribute="bottom" constant="10" id="Xp9-lm-ff0"/>
+                            <constraint firstItem="jzE-RZ-U0V" firstAttribute="top" secondItem="gW2-TT-Wqw" secondAttribute="bottom" constant="23.333333333333258" id="Xp9-lm-ff0"/>
                             <constraint firstItem="gW2-TT-Wqw" firstAttribute="leading" secondItem="YoZ-6v-J5S" secondAttribute="leading" id="fVj-Ya-3Zl"/>
-                            <constraint firstItem="YoZ-6v-J5S" firstAttribute="bottom" secondItem="jzE-RZ-U0V" secondAttribute="bottom" id="ov4-mv-UMK"/>
+                            <constraint firstItem="YoZ-6v-J5S" firstAttribute="bottom" secondItem="jzE-RZ-U0V" secondAttribute="bottom" constant="46.666666666666629" id="ov4-mv-UMK"/>
                             <constraint firstItem="xvf-YX-jk6" firstAttribute="leading" secondItem="YoZ-6v-J5S" secondAttribute="leading" id="tZA-Z3-H6T"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IJN-7D-1DC"/>
+                    <navigationItem key="navigationItem" id="IJN-7D-1DC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="6oL-1i-3xh">
+                            <color key="tintColor" red="0.61176470589999998" green="0.098039215690000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="editButtonTapped:" destination="ArF-lq-bdq" id="k8Z-zb-F64"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cartTable" destination="gW2-TT-Wqw" id="tck-GB-nB7"/>
                         <outlet property="checkoutTotal" destination="Pnf-VJ-PhT" id="tsa-5r-r9J"/>
@@ -711,7 +731,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNl-q9-54x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3144.9275362318845" y="-564.50892857142856"/>
+            <point key="canvasLocation" x="3144.8000000000002" y="-564.53201970443354"/>
         </scene>
         <!--Categories-->
         <scene sceneID="hVd-ai-fdR">
