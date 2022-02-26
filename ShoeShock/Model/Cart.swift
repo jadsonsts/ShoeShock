@@ -17,7 +17,6 @@ class Cart {
         products.append(selectedProduct)
     }
     
-    
     func getTotal() -> Double {
         var total = 0.0
         for x in 0..<products.count {

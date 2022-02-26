@@ -17,11 +17,10 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
         cartTable.dataSource = self
         cartTable.delegate = self
-        cartTable.rowHeight = 110
         cartTable.reloadData()
+        cartTable.rowHeight = 100
         cartTable.allowsSelection = false
         
     }
@@ -41,7 +40,6 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell.updateTable(selProduct: productCart)
             didValueChange()
             cell.valueDelegate = self
-            
             return cell
         } else {
             return CartCell()
@@ -49,21 +47,17 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     //MARK: - SLIDE TO DELETE
     
-    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
-        let tableViewEditingMode = cartTable.isEditing
-        cartTable.setEditing(tableViewEditingMode, animated: true)
-    }
-    
-    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            cartTable.beginUpdates()
             Cart.instance.products.remove(at: indexPath.row)
             cartTable.deleteRows(at: [indexPath], with: .automatic)
             didValueChange()
+            cartTable.endUpdates()
         }
     }
     
@@ -76,15 +70,15 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let action = UIAlertAction(title: "OK", style: .default) { [self] (action) in
                 
                 Cart.instance.products.removeAll()
-                cartTable.reloadData()
                 didValueChange()
+                cartTable.reloadData()
                 alert.dismiss(animated: true, completion: nil)
                 
             }
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "Ops!", message: "Your cart is empty, try adding products to your before purchasing" , preferredStyle: .alert)
+            let alert = UIAlertController(title: "Ops!", message: "Your cart is empty, try adding products to your cart before purchasing" , preferredStyle: .alert)
             
             let action = UIAlertAction(title: "OK", style: .default) { (action) in
                 alert.dismiss(animated: true, completion: nil)

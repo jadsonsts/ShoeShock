@@ -39,12 +39,10 @@ class CartCell: UITableViewCell {
     }
     
     @objc func stepperValueChanges(_ sender: UIStepper) {
-        productQty.text = String(format: "%.0f", sender.value)
         selectedProduct.quantity = Int(sender.value)
-        
+        productQty.text = String(format: "%.0f", sender.value)
         selectedProduct.calculateTotal()
         productValue.text = "$\(selectedProduct.totalCost)"
-        
         valueDelegate.didValueChange()
 
     }
