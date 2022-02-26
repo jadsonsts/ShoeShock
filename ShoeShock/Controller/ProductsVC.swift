@@ -13,8 +13,6 @@ class ProductsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
     
     private (set) public var products = [Product]()
-    
-    //var selectedCategory: Category?
 
 
     override func viewDidLoad() {
@@ -56,5 +54,4 @@ class ProductsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             
     }
     
-
 }

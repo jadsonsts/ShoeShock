@@ -7,15 +7,13 @@
 
 import Foundation
 
-struct Cart {
+class Cart {
+    static let instance = Cart()
     
-    public var products = [SelectedProduct]()
-    var quantity = 0
-    var totalCost = 0.0
-    
-    
-    mutating func addProduct(product: Product) {
-        let selectedProduct = SelectedProduct(product: product, quantity: 1, totalCost: 0.0 )
+    var products = [SelectedProduct]()
+
+    func addProduct(product: Product, size: String) {
+         let selectedProduct = SelectedProduct(product: product, quantity: 1, size: size)
         products.append(selectedProduct)
     }
     

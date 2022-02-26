@@ -28,43 +28,31 @@ class DataService {
     ]
     
     private let adidas = [
-        Product(ID: 7, title: "SUPERSTAR VEGAN SHOES", price: 140, imageName: "Superstar_Vegan_Black.jpg"),
-        Product(ID: 8, title: "NMD_R1 PRIMEBLUE SHOES", price: 240, imageName: "NMD_R1_White.jpg"),
-        Product(ID: 9, title: "SWIFT RUN X SHOES", price: 180, imageName: "Swift_Run_X_Shoes.jpg"),
+        Product(ID: 7, title: "SUPERSTAR VEGAN", price: 140, imageName: "Superstar_Vegan_Black.jpg"),
+        Product(ID: 8, title: "NMD_R1 PRIMEBLUE", price: 240, imageName: "NMD_R1_White.jpg"),
+        Product(ID: 9, title: "SWIFT RUN X", price: 180, imageName: "Swift_Run_X_Shoes.jpg"),
         Product(ID: 10, title: "ULTRABOOST 5.0 DNA", price: 310, imageName: "ULTRABOOST_5.0_DNA.jpg"),
-        Product(ID: 11, title: "FORUM LOW SHOES", price: 170, imageName: "Forum_Low_Shoes.jpg"),
-        Product(ID: 12, title: "CODECHAOS 21 PRIMEBLUE SPIKELESS GOLF", price: 260, imageName: "Codechaos_21_Primeblue_Spikeless_Golf_Shoes.jpg")
+        Product(ID: 11, title: "FORUM LOW", price: 170, imageName: "Forum_Low_Shoes.jpg"),
+        Product(ID: 12, title: "CODECHAOS 21 PRIMEBLUE", price: 260, imageName: "Codechaos_21_Primeblue_Spikeless_Golf_Shoes.jpg")
     ]
     
     private let puma = [
-        Product(ID: 13, title: "FLYER RUNNING SHOES", price: 110, imageName: "FLYER-RUNNING-SHOES.jpg"),
+        Product(ID: 13, title: "FLYER RUNNING", price: 110, imageName: "FLYER-RUNNING-SHOES.jpg"),
         Product(ID: 14, title: "SOFTRIDE ENZO NXT FADE", price: 120, imageName: "SOFTRIDE-ENZO-NXT-FADE.jpg"),
         Product(ID: 15, title: "TRIPLE BASKETBALL", price: 140, imageName: "TRIPLE-BASKETBALL.jpg"),
         Product(ID: 16, title: "DEVIATE NITRO", price: 240, imageName: "DEVIATE-NITRO.jpg"),
         Product(ID: 17, title: "CELL VIVE EVO", price: 110, imageName: "CELL-VIVE-EVO.jpg"),
-        Product(ID: 18, title: "COURT RIDER SUMMER DAYS BASKETBALL", price: 170, imageName:"COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg")
+        Product(ID: 18, title: "COURT RIDER BASKETBALL", price: 170, imageName:"COURT-RIDER-SUMMER DAYS-BASKETBALL.jpg")
     ]
     
     private let newBalance = [
-        Product(ID: 19, title: "SALEHE BEMBURY 574 YURT" , price: 270, imageName: "SaleheBembury-574-YURT.jpg"),
+        Product(ID: 19, title: "SALEHE BEMBURY 574" , price: 270, imageName: "SaleheBembury-574-YURT.jpg"),
         Product(ID: 20, title: "BB480" , price: 160, imageName: "BB480.jpg"),
         Product(ID: 21, title: "FRESH FOAM 1080V11" , price: 290, imageName: "Fresh-Foam1080v11.jpg"),
         Product(ID: 22, title: "FUELCELL PRISM", price: 200, imageName: "FuelCellPrism.jpg"),
         Product(ID: 23, title: "574v2", price: 160, imageName: "574v2.jpg"),
         Product(ID: 24, title: "XC72", price: 200, imageName: "XC72.jpg")
     ]
-
-    
-//    private let selectedProduct = [SelectedProduct]()
-    private let selectedProduct = [
-        SelectedProduct(product: Product (ID: 19, title: "SALEHE BEMBURY 574 YURT" , price: 270, imageName: "SaleheBembury-574-YURT.jpg"), quantity: 1, totalCost: 0.0),
-        SelectedProduct(product: Product (ID: 19, title: "SALEHE BEMBURY 574 YURT" , price: 270, imageName: "SaleheBembury-574-YURT.jpg"), quantity: 1, totalCost: 0.0)
-        ]
-    
-    func getProductsCart() -> [SelectedProduct]{
-        print("passed here")
-        return selectedProduct
-    }
 
 
     func getCategories() -> [Category]{
@@ -499,7 +487,25 @@ class DataService {
         }
     }
     
+    //MARK: - Selected Product for Cart
+
+    var selectedProduct = [SelectedProduct]()
+
+    //    private let selectedProduct = [
+    //        SelectedProduct(product: Product (ID: 19, title: "SALEHE BEMBURY 574 YURT" , price: 270, imageName: "SaleheBembury-574-YURT.jpg"), quantity: 1, totalCost: 0.0),
+    //        SelectedProduct(product: Product (ID: 19, title: "SALEHE BEMBURY 574 YURT" , price: 270, imageName: "SaleheBembury-574-YURT.jpg"), quantity: 1, totalCost: 0.0)
+    //        ]
+
+    func getProductsCart(for id: Int) -> [SelectedProduct]{
+        print("passed here")
+        return selectedProduct
+    }
+    
 }
+
+
+
+
 
 
 

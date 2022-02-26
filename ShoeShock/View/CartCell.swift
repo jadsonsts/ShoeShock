@@ -7,31 +7,43 @@
 
 import UIKit
 
-class CartCell: UITableViewCell {
+protocol TotalCartDelegate {
+    func didValueChange()
+}
 
+class CartCell: UITableViewCell {
+    
+    var valueDelegate: TotalCartDelegate!
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productValue: UILabel!
     @IBOutlet weak var productSize: UILabel!
     @IBOutlet weak var productQty: UILabel!
+    @IBOutlet weak var quantityStepper: UIStepper!
     
     var selectedProduct: SelectedProduct!
-
+    var cartVC: CartVC!
     
-    func updateTable (selProduct: SelectedProduct, quantity: Int) {
+    func updateTable (selProduct: SelectedProduct) {
+        
+        quantityStepper.addTarget(self, action: #selector(stepperValueChanges(_:)), for: .valueChanged)
         
         productName.text = selProduct.product.title
         productImage.image = UIImage(named: selProduct.product.imageName)
         productValue.text = "$\(selProduct.product.price * Double(selProduct.quantity))"
-        productSize.text = "7"
-        productQty.text = "\(quantity)"
-        
+        productSize.text = "\(selProduct.size)"
+        productQty.text = "\(selProduct.quantity)"
+        self.selectedProduct = selProduct
+        selectedProduct.calculateTotal()
     }
     
-    @IBAction func stepperValueChanges(_ sender: UIStepper) {
+    @objc func stepperValueChanges(_ sender: UIStepper) {
+        selectedProduct.quantity = Int(sender.value)
         productQty.text = String(format: "%.0f", sender.value)
-        self.selectedProduct.quantity = Int(sender.value)
-        self.selectedProduct.calculateTotal()
-    }
+        selectedProduct.calculateTotal()
+        productValue.text = "$\(selectedProduct.totalCost)"
+        valueDelegate.didValueChange()
 
+    }
 }
